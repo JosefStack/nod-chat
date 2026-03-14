@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import cookieParser from "cookie-parser";
 
 import { connectDB } from "./lib/db.js";
 
@@ -19,6 +20,7 @@ console.log(__dirname);
 const PORT = ENV.PORT || 3000;
 
 app.use(express.json()); 
+app.use(cookieParser());
 
 app.use("/api/auth", authRouter);
 app.use("/api/messages", messageRouter);

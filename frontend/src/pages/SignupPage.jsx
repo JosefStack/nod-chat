@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAuthStore } from '../store/useAuthStore';
 import AnimatedBorderContainer from '../components/AnimatedBorderContainer';
-import { LoaderIcon, MailIcon, MessageCircleIcon, UserIcon } from "lucide-react";
+import { LoaderIcon, LockIcon, MailIcon, MessageCircleIcon, UserIcon } from "lucide-react";
 import { Link } from 'react-router';
 
 const SignupPage = () => {
@@ -10,9 +10,9 @@ const SignupPage = () => {
     const { signup, isSigningUp } = useAuthStore();
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        await signup(formData);
+        signup(formData);
     };
 
 
@@ -67,7 +67,7 @@ const SignupPage = () => {
                                     <div>
                                         <label className="auth-input-label">Password</label>
                                         <div className="relative">
-                                            <MailIcon className="auth-input-icon" />
+                                            <LockIcon className="auth-input-icon" />
                                             <input type="password"
                                                 value={formData.password}
                                                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -124,7 +124,7 @@ const SignupPage = () => {
                 </AnimatedBorderContainer>
             </div>
         </div>
-    )
+    );  
 }
 
 export default SignupPage

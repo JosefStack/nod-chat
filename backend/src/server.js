@@ -20,7 +20,8 @@ console.log(__dirname);
 
 const PORT = ENV.PORT || 3000;
 
-app.use(express.json({ limit: "10mb" })); 
+app.use(express.json({ limit: "20mb" })); 
+app.use(express.urlencoded({ limit: "20mb" }));
 app.use(cookieParser());
 
 app.use(cors({

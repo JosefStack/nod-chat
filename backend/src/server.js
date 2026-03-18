@@ -11,9 +11,11 @@ import messageRouter from "./routes/message.route.js";
 
 import { ENV } from "./lib/env.js";
 
+import { app, server } from "./lib/socket.js"
+
 dotenv.config();
 
-const app = express();
+
 const __dirname = path.resolve();
 
 console.log(__dirname);
@@ -42,7 +44,7 @@ if (ENV.NODE_ENV === "production") {
     })
 };  
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectDB();
     console.log(`Server is listening on port ${PORT}`);
 })

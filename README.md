@@ -1,5 +1,7 @@
 # Nod - Real-Time Chat Application
 
+[ not vibecoded :) ]
+
 A full-stack real-time chat application built with React, Node.js, Socket.io, and MongoDB. Features secure authentication, instant messaging, online presence tracking, and image sharing.
 
 ## 🚀 Live Demo

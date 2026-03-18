@@ -378,23 +378,6 @@ Add these to your Render dashboard:
 
 ---
 
-## 🧪 Running Tests
-
-```bash
-# Backend tests
-cd backend
-npm test
-
-# Frontend tests
-cd frontend
-npm test
-
-# End-to-end tests
-npm run test:e2e
-```
-
----
-
 ## 🤝 Contributing
 
 Contributions are always welcome!

@@ -10,20 +10,24 @@ import MessagesLoadingSkeletion from "./MessagesLoadingSkeletion";
 
 const ChatContainer = () => {
 
-    const { selectedUser, getMessagesByUserId, messages, isMessagesLoading } = useChatStore();
+    const { selectedUser, getMessagesByUserId, messages, isMessagesLoading, subscribeToMessages, unSubscribeToMessages } = useChatStore();
     const { authUser } = useAuthStore();
 
     const messageEndRef = useRef(null);
 
     useEffect(() => {
         getMessagesByUserId(selectedUser._id);
+        subscribeToMessages();
+
+        return () => unSubscribeToMessages();
     }, [selectedUser])
+
 
     useEffect(() => {
         if (messageEndRef.current) {
             messageEndRef.current.scrollIntoView({ behavior: "smooth" });
         }
-    }, [messages]);
+    }, [messages]);     
 
     return (
         <>
